@@ -1,12 +1,13 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import { Card, Flex, Metric, ProgressBar, Text } from "@tremor/react";
+import { useTranslation } from "react-i18next";
 
 function App() {
+  const { t } = useTranslation();
+
   return (
     <div>
+      <Text>{t("welcome")}</Text>
       <Card className="max-w-xs mx-auto">
         <Text>Sales</Text>
         <Metric>$ 34,743</Metric>
