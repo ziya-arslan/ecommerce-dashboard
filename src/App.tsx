@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="">
       <Sidebar />
-      <ThemeSwitch />
+      {/* <ThemeSwitch /> */}
     </div>
   );
 }
