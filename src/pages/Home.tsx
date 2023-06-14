@@ -1,7 +1,6 @@
 import {
   AreaChart,
   Badge,
-  Card,
   Divider,
   Icon,
   Table,
@@ -19,62 +18,10 @@ import {
   BiLineChart,
 } from "react-icons/bi";
 import { StatusOnlineIcon } from "@heroicons/react/outline";
+import { homeChart } from "../data/CHART_DATA";
+import { lastOrders } from "../data/ORDER_DATA";
 
 const Home = () => {
-  const chartdata = [
-    {
-      date: "Jan 22",
-      SemiAnalysis: 2890,
-      "The Pragmatic Engineer": 2338,
-    },
-    {
-      date: "Feb 22",
-      SemiAnalysis: 2756,
-      "The Pragmatic Engineer": 2103,
-    },
-    {
-      date: "Mar 22",
-      SemiAnalysis: 3322,
-      "The Pragmatic Engineer": 2194,
-    },
-    {
-      date: "Apr 22",
-      SemiAnalysis: 3470,
-      "The Pragmatic Engineer": 2108,
-    },
-    {
-      date: "May 22",
-      SemiAnalysis: 3475,
-      "The Pragmatic Engineer": 1812,
-    },
-    {
-      date: "Jun 22",
-      SemiAnalysis: 3129,
-      "The Pragmatic Engineer": 1726,
-    },
-  ];
-
-  const data = [
-    {
-      name: "Viola Amherd",
-      product: "Federal Councillor",
-      date_time: new Date(),
-      status: "In progress",
-    },
-    {
-      name: "Simonetta Sommaruga",
-      product: "Federal Councillor",
-      date_time: new Date(),
-      status: "On hold",
-    },
-    {
-      name: "Alain Berset",
-      product: "Federal Councillor",
-      date_time: new Date(),
-      status: "Done",
-    },
-  ];
-
   const dataFormatter = (number: number) => {
     return "$ " + Intl.NumberFormat("us").format(number).toString();
   };
@@ -151,7 +98,7 @@ const Home = () => {
         <Title>Revenue</Title>
         <AreaChart
           className="h-72 mt-4"
-          data={chartdata}
+          data={homeChart}
           index="date"
           categories={["SemiAnalysis", "The Pragmatic Engineer"]}
           colors={["indigo", "cyan"]}
@@ -163,7 +110,7 @@ const Home = () => {
         <div className="flex flex-col">
           <Table>
             <TableBody>
-              {data.map((item) => (
+              {lastOrders.map((item) => (
                 <TableRow key={item.name}>
                   <TableCell>{item.name}</TableCell>
                   <TableCell>
