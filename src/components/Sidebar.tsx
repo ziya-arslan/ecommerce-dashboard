@@ -1,11 +1,6 @@
 import { Icon, Title } from "@tremor/react";
-import {
-  CiGrid31,
-  CiShop,
-  CiUser,
-  CiCircleInfo,
-  CiCircleMinus,
-} from "react-icons/ci";
+import { CiCircleInfo, CiCircleMinus } from "react-icons/ci";
+import { navItems, settingNavItems } from "../data/NAV_ITEMS";
 
 const Sidebar = () => {
   return (
@@ -14,41 +9,27 @@ const Sidebar = () => {
         <Title>Logo</Title>
       </div>
       <div className="flex flex-col gap-2 px-2 mt-10 flex-1">
-        <a
-          href="#"
-          className="flex items-center text-gray-800 hover:bg-gray-300 py-2 rounded-lg"
-        >
-          <Icon icon={CiGrid31} className="text-inherit mr-2" />
-          Home
-        </a>
-        <a
-          href="#"
-          className="flex items-center text-gray-500 hover:bg-gray-300 py-2 rounded-lg"
-        >
-          <Icon icon={CiShop} className="text-inherit mr-2" />
-          Orders
-        </a>
-        <a
-          href="#"
-          className="flex items-center text-gray-500 hover:bg-gray-300 py-2 rounded-lg"
-        >
-          <Icon icon={CiUser} className="text-inherit mr-2" /> Stuff
-        </a>
+        {navItems.map((item, idx) => (
+          <a
+            key={idx}
+            href={item.url}
+            className="flex items-center text-gray-800 hover:bg-gray-300 py-2 rounded-lg"
+          >
+            <Icon icon={item.icon} className="text-inherit mr-2" />
+            {item.label}
+          </a>
+        ))}
         <div className="mt-auto">
-          <a
-            href="#"
-            className="flex items-center text-gray-500 hover:bg-gray-300 py-2 rounded-lg"
-          >
-            <Icon icon={CiCircleInfo} className="text-inherit mr-2" /> Help &
-            information
-          </a>
-          <a
-            href="#"
-            className="flex items-center text-gray-500 hover:bg-gray-300 py-2 rounded-lg"
-          >
-            <Icon icon={CiCircleMinus} className="text-inherit mr-2" />
-            Log Out
-          </a>
+          {settingNavItems.map((item, idx) => (
+            <a
+              key={idx}
+              href={item.url}
+              className="flex items-center text-gray-500 hover:bg-gray-300 py-2 rounded-lg"
+            >
+              <Icon icon={item.icon} className="text-inherit mr-2" />{" "}
+              {item.label}
+            </a>
+          ))}
         </div>
       </div>
     </div>
