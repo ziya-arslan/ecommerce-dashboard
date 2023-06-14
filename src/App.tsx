@@ -1,11 +1,13 @@
 import ThemeSwitch from "./components/ThemeSwitch";
-import Sidebar from "./components/sidebar";
+import Sidebar from "./components/Sidebar";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <div className="">
+    <div className="flex">
       <Sidebar />
       {/* <ThemeSwitch /> */}
+      <Home />
     </div>
   );
 }
