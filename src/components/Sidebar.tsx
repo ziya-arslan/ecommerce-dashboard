@@ -1,5 +1,4 @@
 import { Icon, Title } from "@tremor/react";
-import { CiCircleInfo, CiCircleMinus } from "react-icons/ci";
 import { navItems, settingNavItems } from "../data/NAV_ITEMS";
 
 const Sidebar = () => {
