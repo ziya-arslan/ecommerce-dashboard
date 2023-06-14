@@ -1,7 +1,10 @@
 import { Icon, Title } from "@tremor/react";
 import { navItems, settingNavItems } from "../data/NAV_ITEMS";
+import { useLocation } from "react-router-dom";
 
 const Sidebar = () => {
+  const location = useLocation();
+
   return (
     <div className="h-screen w-full max-w-[16rem] p-4 border-r flex flex-col">
       <div className="mb-2 p-4">
@@ -12,7 +15,9 @@ const Sidebar = () => {
           <a
             key={idx}
             href={item.url}
-            className="flex items-center text-gray-800 hover:bg-gray-300 py-2 rounded-lg"
+            className={`flex items-center hover:bg-gray-300 py-2 rounded-lg ${
+              location.pathname === item.url ? "text-black" : "text-gray-400"
+            }`}
           >
             <Icon icon={item.icon} className="text-inherit mr-2" />
             {item.label}
