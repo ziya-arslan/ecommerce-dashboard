@@ -7,10 +7,12 @@ function App() {
   return (
     <div className="flex">
       <Sidebar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/orders" element={<Orders />} />
-      </Routes>
+      <div className="px-12 pt-4 w-full">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/orders" element={<Orders />} />
+        </Routes>
+      </div>
     </div>
   );
 }
