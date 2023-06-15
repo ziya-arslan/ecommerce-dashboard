@@ -27,7 +27,7 @@ const Home = () => {
   };
 
   return (
-    <div className="px-12 pt-4 w-full">
+    <>
       <div className="flex justify-between w-full items-center">
         <Title className="text-[26px] font-bold text-black">
           Hello, User 👋
@@ -139,7 +139,7 @@ const Home = () => {
           </Table>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
